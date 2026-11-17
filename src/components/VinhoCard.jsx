@@ -6,7 +6,7 @@ export default function VinhoCard({ vinho, onClick }) {
       className="group text-left w-full bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-dourado-400 flex flex-col"
     >
       {/* Imagem mais compacta (proporção 4:5) */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+      <div className="relative aspect-4/5 overflow-hidden bg-neutral-100">
         <img
             src={vinho.imagem}
             alt={vinho.nome}
