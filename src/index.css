@@ -29,3 +29,8 @@
     @apply bg-neutral-50 text-neutral-800 antialiased font-sans;
   }
 }
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}

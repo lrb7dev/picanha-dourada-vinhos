@@ -8,10 +8,14 @@ export default function VinhoCard({ vinho, onClick }) {
       {/* Imagem mais compacta (proporção 4:5) */}
       <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
         <img
-          src={vinho.imagem}
-          alt={vinho.nome}
-          loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            src={vinho.imagem}
+            alt={vinho.nome}
+            loading="lazy"
+            onError={(e) => {
+                e.currentTarget.onerror = null; // evita loop
+                e.currentTarget.src = "/img/placeholder-vinho.svg";
+            }}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         {/* Badge de disponibilidade menor */}
         <span
@@ -32,7 +36,7 @@ export default function VinhoCard({ vinho, onClick }) {
         </h3>
         <div className="mt-auto pt-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between text-[11px] sm:text-xs">
           <span className="text-neutral-500 truncate">
-            {vinho.uva} · {vinho.safra}
+            {vinho.tipo} · {vinho.uva} · {vinho.safra}
           </span>
           <span className="font-mono font-semibold text-vinho-700 bg-vinho-50 px-1.5 py-0.5 rounded w-fit">
             {vinho.codigo}

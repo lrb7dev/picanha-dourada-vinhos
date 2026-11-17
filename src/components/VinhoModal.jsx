@@ -30,8 +30,12 @@ export default function VinhoModal({ vinho, onClose }) {
           <img
             src={vinho.imagem}
             alt={vinho.nome}
+            onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "/img/placeholder-vinho.svg";
+            }}
             className="w-full h-full object-cover"
-          />
+        />
           <button
             onClick={onClose}
             aria-label="Fechar"
