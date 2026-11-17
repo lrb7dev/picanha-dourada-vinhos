@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@theme {
+  --color-vinho-50: #fdf3f4;
+  --color-vinho-100: #fbe4e6;
+  --color-vinho-200: #f6cdd1;
+  --color-vinho-300: #eea9b0;
+  --color-vinho-400: #e27885;
+  --color-vinho-500: #d24d5e;
+  --color-vinho-600: #b83149;
+  --color-vinho-700: #9a2440;
+  --color-vinho-800: #7f1f38;
+  --color-vinho-900: #6d1e33;
+  --color-vinho-950: #3c0d1a;
+
+  --color-dourado-400: #e0b84c;
+  --color-dourado-500: #d4a72c;
+  --color-dourado-600: #b88a1f;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-neutral-50 text-neutral-800 antialiased font-sans;
+  }
+}
